@@ -52,8 +52,8 @@ var arenaScene = new Phaser.Class({
 
                 //PLAYER
                 playerDepth = currentDepth;
-                initializePlayer(new jotaro(this), 592, 672, this);
-                // initializePlayer(new dio(this), 560, 656, this);
+                // initializePlayer(new jotaro(this), 592, 672, this);
+                initializePlayer(new dio(this), 560, 656, this);
                 currentDepth++;
 
                 // PASSABLE LAYER
