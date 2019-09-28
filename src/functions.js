@@ -691,6 +691,7 @@ function update(game){
                 robocopDelay = 10000;
                 spawnDelay = 12000;
                 initializeEnemy(new mech(game), 592, 672, game);
+                // initializeEnemy(new dioBoss(game), 592, 672, game);
             }
             
             if(difficulty != Math.floor(enemies.length / 10)){ // control spawn rate

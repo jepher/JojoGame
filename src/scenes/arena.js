@@ -83,12 +83,13 @@ var arenaScene = new Phaser.Class({
                 // initializeEnemy(new robocop(this), player.x + 100, player.y + 100, this);
                 // initializeEnemy(new mech(this), player.x + 100, player.y + 100, this);
 
-                initializeEnemy(new cop(), player.x + 150, player.y + 150, this);
-                initializeEnemy(new cop(), player.x + 150, player.y - 150, this);
-                initializeEnemy(new cop(), player.x - 150, player.y + 150, this);
-                initializeEnemy(new cop(), player.x - 150, player.y - 150, this);
+                // initializeEnemy(new cop(), player.x + 150, player.y + 150, this);
+                // initializeEnemy(new cop(), player.x + 150, player.y - 150, this);
+                // initializeEnemy(new cop(), player.x - 150, player.y + 150, this);
+                // initializeEnemy(new cop(), player.x - 150, player.y - 150, this);
                 // initializeEnemy(new mech(this), player.x + 150, player.y, this);
                 // initializeEnemy(new mech(this), player.x - 150, player.y, this);
+                initializeEnemy(new dioBoss(this), player.x + 150, player.y, this);
 
             // CONTROLS
                 //Add Keyboard Events
