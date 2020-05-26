@@ -1,54 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Dio's Bizarre Adventure</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dio's Bizarre Adventure</title>
     <script src="src/phaser.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d85ed4e2f5.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-        #phaser-app{ 
-            width: 960;
-            height: 700;
-            margin: 0 auto;
-            display: table;
-            position: fixed;
-            cursor: none;
-        }  
+      body {
+        margin: 0;
+      }
+      #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #device-warning {
+        display: inline-block;
+        font-size: 1.2rem;
+        padding: 1rem;
+        background: #deb743;
+        border-radius: 10px;
+      }
+      #device-warning i {
+        margin-right: 1rem;
+      }
+      #screen-container {
+        width: 100%;
+        height: 100vh;
+        background-color: #454545;
+      }
+      #phaser-app {
+        width: 960;
+        height: 700;
+        cursor: none;
+      }
     </style>
-</head>
-<body>
-    <div id='phaser-app'>
-        <!-- import js files -->
-        <script src="src/functions.js"></script>
+  </head>
+  <body>
+    <div id="screen-container">
+      <div id="content">
+        <div id="device-warning">
+          <i class="fas fa-exclamation"></i>Mobile devices not supported
+        </div>
+        <div id="phaser-app">
+          <!-- import js files -->
+          <script src="src/functions.js"></script>
 
-        <script src="src/scenes/menu.js"></script>
-        <script src="src/scenes/help.js"></script>
-        <script src="src/scenes/arena.js"></script>
+          <script src="src/scenes/menu.js"></script>
+          <script src="src/scenes/help.js"></script>
+          <script src="src/scenes/arena.js"></script>
 
-        <script src="src/entities/characters/jotaro.js"></script>
-        <script src="src/entities/characters/dio.js"></script>
+          <script src="src/entities/characters/jotaro.js"></script>
+          <script src="src/entities/characters/dio.js"></script>
 
-        <script src="src/entities/enemies/cop.js"></script>
-        <script src="src/entities/enemies/soldier.js"></script>
-        <script src="src/entities/enemies/swat.js"></script>
-        <script src="src/entities/enemies/sniper.js"></script>
-        <script src="src/entities/enemies/pyro.js"></script>
-        <script src="src/entities/enemies/robocop.js"></script>
-        <script src="src/entities/enemies/mech.js"></script>
-        <script src="src/entities/enemies/sentinel.js"></script>
-        <script src="src/entities/enemies/bomber.js"></script>
-        <script src="src/entities/enemies/robot.js"></script>
+          <script src="src/entities/enemies/cop.js"></script>
+          <script src="src/entities/enemies/soldier.js"></script>
+          <script src="src/entities/enemies/swat.js"></script>
+          <script src="src/entities/enemies/sniper.js"></script>
+          <script src="src/entities/enemies/pyro.js"></script>
+          <script src="src/entities/enemies/robocop.js"></script>
+          <script src="src/entities/enemies/mech.js"></script>
+          <script src="src/entities/enemies/sentinel.js"></script>
+          <script src="src/entities/enemies/bomber.js"></script>
+          <script src="src/entities/enemies/robot.js"></script>
+          <script src="src/entities/enemies/dioBoss.js"></script>
 
-        <script src="src/entities//effects/explosion.js"></script>
+          <script src="src/entities//effects/explosion.js"></script>
 
-        <script type="text/javascript">
+          <script type="text/javascript">
             var map;
             var groundLayer, wallLayer, obstacleLayer, passableLayer;
 
             var player;
-            var autoAttack ;
+            var autoAttack;
             var cursor;
             var keys;
-            
+
             // effects
             var effects = [];
 
@@ -112,7 +143,7 @@
             var bossesKilled = 0;
 
             // scene manager
-            var scenes = ['menu', 'help', 'arena'];
+            var scenes = ["menu", "help", "arena"];
             var currentScene = 0;
 
             // game state
@@ -145,24 +176,25 @@
             var scoreText;
 
             const config = {
-                type : Phaser.AUTO,
-                width: 960,
-                height: 700,
-                parent: 'phaser-app',
-                physics:{
-                    default: 'arcade',
-                    arcade: {
-                        debug: false,
-                        overlapBias: 20,
-                        TILE_BIAS: 32
-                    }
+              type: Phaser.AUTO,
+              width: 960,
+              height: 700,
+              parent: "phaser-app",
+              physics: {
+                default: "arcade",
+                arcade: {
+                  debug: false,
+                  overlapBias: 20,
+                  TILE_BIAS: 32,
                 },
-                scene:[menuScene, helpScene, arenaScene]
-            }
+              },
+              scene: [menuScene, helpScene, arenaScene],
+            };
 
             var game = new Phaser.Game(config);
-        </script>	
+          </script>
+        </div>
+      </div>
     </div>
-	
-</body>
+  </body>
 </html>
